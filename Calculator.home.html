@@ -7,35 +7,55 @@
 </head>
 <body>
 <div style="width: 99vw; height: 90vh; display: flex; justify-content: center; align-items: center;">
+    <div class="comp_stylization" >
+        <h1 style="text-align: center">Calculator stylization</h1><br>
+        <div><label for="Color_Keys" style="font-size: 20px">Color Keys-Background: </label>
+            <input type="color" name="keys" id="Color_Keys" value="#FDFBF9"></div>
+        <div><label for="Color_Calculator" style="font-size: 20px">Color Calculator: </label>
+            <input type="color" name="calc"id="Color_Calculator" value="#4f5554"></div>
+        <div> <label for="Color_Screen" style="font-size: 20px">Color Screen: </label>
+            <input type="color" name="scn" id="Color_Screen" value="#FDFBF9"></div>
+        <div> <label for="Color_Input" style="font-size: 20px">Color Input and Keys: </label>
+            <input type="color" name="inp" id="Color_Input" value="#000000"></div>
+        <div> <label for="Color_Background" style="font-size: 20px">Color Background: </label>
+            <input type="color" name="bck" id="Color_Background" value="#D8D6D5"></div>
+
+
+
+
+    </div>
     <div class="containeer_calc">
         <div style="width: 100%; height: 40%;display: flex; justify-content: center; align-content: space-around">
             <div class="ecran">
+                <div class="current_string"></div>
                 <div class="screen_display"></div>
             </div>
         </div>
         <div class="taste">
-            <div class="key" data-key="46">Clear all</b></div>
-            <div class="key" data-key="107"><b>+</b></div>
-            <div class="key" data-key="189"><b>-</b></div>
-            <div class="key" data-key="8"><b><-</b></div>
-            <div class="key" data-key="48"><b>0</b></div>
-            <div class="key" data-key="49"><b>1</b></div>
-            <div class="key" data-key="50"><b>2</b></div>
-            <div class="key" data-key="106"><b>*</b></div>
-            <div class="key" data-key="51"><b>3</b></div>
-            <div class="key" data-key="52"><b>4</b></div>
-            <div class="key" data-key="53"><b>5</b></div>
-            <div class="key" data-key="191"><b>/</b></div>
-            <div class="key" data-key="54"><b>6</b></div>
-            <div class="key" data-key="55"><b>7</b></div>
-            <div class="key" data-key="56"><b>8</b></div>
-            <div class="key" data-key="57"><b>9</b></div>
-            <div class="key" style="visibility:hidden;"><b></b></div>
-            <div class="key" style="visibility: hidden;"><b></b></div>
-            <div class="key" style="visibility: hidden;"><b></b></div>
-            <div class="key" data-key="61"><b>=</b></div>
+            <div class="key" data-key="Delete"><b>DELETE</b></div>
+            <div class="key" data-key="+"><b>+</b></div>
+            <div class="key" data-key="-"><b>-</b></div>
+            <div class="key" data-key="Backspace"><b><-</b></div>
+            <div class="key" data-key="0"><b>0</b></div>
+            <div class="key" data-key="1"><b>1</b></div>
+            <div class="key" data-key="2"><b>2</b></div>
+            <div class="key" data-key="*"><b>*</b></div>
+            <div class="key" data-key="3"><b>3</b></div>
+            <div class="key" data-key="4"><b>4</b></div>
+            <div class="key" data-key="5"><b>5</b></div>
+            <div class="key" data-key="/"><b>/</b></div>
+            <div class="key" data-key="6"><b>6</b></div>
+            <div class="key" data-key="7"><b>7</b></div>
+            <div class="key" data-key="8"><b>8</b></div>
+            <div class="key" data-key="9"><b>9</b></div>
+            <div class="key" style="visibility: hidden"><b>9</b></div>
+            <div class="key" style="visibility: hidden"><b>9</b></div>
+            <div class="key" style="visibility: hidden"><b>9</b></div>
+            <div class="key" data-key="="><b>=</b></div>
+
         </div>
     </div>
 </div>
+<script src="Calculator_op.js"></script>
 </body>
 </html>

@@ -1,15 +1,29 @@
-body{
-    background-color: #D8D6D5;
+:root{
+    --keys:#FDFBF9;
+    --bck: #D8D6D5;
+    --scn:#FDFBF9;
+    --calc:#4f5554;
+    --inp:#000000;
 }
-
+body{
+    background-color: var(--bck);
+}
+.comp_stylization{
+    width: 50vh;
+    height: 70vh;
+    display: flex;
+    align-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
 .containeer_calc{
      border: 15px solid black;
 
      width: 60vh;
      height: 70vh;
-     position: relative;
+
      border-radius: 10%;
-     background-color: #4f5554;
+     background-color: var(--calc);
     display: flex;
     flex-wrap: wrap ;
     gap: 20px;
@@ -17,19 +31,29 @@ body{
 
 }
 .ecran{
-    background-color: #FDFBF9;
+    background-color: var(--scn);
     width: 100%;
     height: 80%;
 
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     border-radius: 15%;
 
 }
+.current_string{
+    color: var(--inp);
+    width: 100%;
+    height: 30%;
+    font-size: 25px;
+}
 .screen_display{
+    color: var(--inp);
     width: 100%;
     height: 30%;
     align-self: center;
+    font-size: 40px;
 }
 
 .taste{
@@ -42,12 +66,22 @@ body{
 }
 .key{
     text-align: center ;
-    background-color:#FDFBF9 ;
+    background-color:var(--keys) ;
+    color: var(--inp);
     font-size: 20px;
+    transition: all 0.07s;
     font-family: "Franklin Gothic Book";
     width: 21.8%;
     height: 12%;
     border: 2px solid white;
     border-radius: 15%;
 
+}
+
+.keystr{
+
+    transform: scale(1.02);
+    border: 3px solid #D8D6D5 ;
+    box-shadow: #D8D6D5;
+    font-size: 25px;
 }
