@@ -1,0 +1,53 @@
+body{
+    background-color: #D8D6D5;
+}
+
+.containeer_calc{
+     border: 15px solid black;
+
+     width: 60vh;
+     height: 70vh;
+     position: relative;
+     border-radius: 10%;
+     background-color: #4f5554;
+    display: flex;
+    flex-wrap: wrap ;
+    gap: 20px;
+    justify-content: center;
+
+}
+.ecran{
+    background-color: #FDFBF9;
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    border-radius: 15%;
+
+}
+.screen_display{
+    width: 100%;
+    height: 30%;
+    align-self: center;
+}
+
+.taste{
+    display: flex;
+    flex-wrap: wrap;;
+    width: 100%;
+    height: 58%;
+    border-top:10px solid black ;
+    gap: 1px 10px;
+}
+.key{
+    text-align: center ;
+    background-color:#FDFBF9 ;
+    font-size: 20px;
+    font-family: "Franklin Gothic Book";
+    width: 21.8%;
+    height: 12%;
+    border: 2px solid white;
+    border-radius: 15%;
+
+}
