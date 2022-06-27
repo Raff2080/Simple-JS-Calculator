@@ -77,7 +77,7 @@ function keyHandlers(e){
     let screen=document.querySelector(".screen_display")
     let screen_2=document.querySelector(".current_string")
 
-    if(nr.length>7 || opr.length>12){
+    if(nr.length>=8 || opr.length>12){
         screen.innerText=""
         screen_2.innerText="ERROR INPUT TOO BIG (PRESS DELETE TO CONTINUE)"
         error_flag=1
