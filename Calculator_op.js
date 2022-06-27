@@ -7,7 +7,6 @@ let sign=["+","-","/","*"]
 
 function valid(s){
     if(sign.includes(s[-1])){return false}
-    if(sign.includes(s[0])){return false}
     for(let i=0; i<s.length;i++){
         if(sign.includes(s[i]) && sign.includes(s[i+1])  ){return false}
         if(s[i]==="/" && s[i+1]==="0"){return false}
@@ -15,6 +14,8 @@ function valid(s){
     return true
 }
 function calculate(s){
+    console.log(opr)
+
     let screen=document.querySelector(".screen_display")
     let screen_2=document.querySelector(".current_string")
     if(valid(s)===false){
@@ -23,43 +24,36 @@ function calculate(s){
         error_flag=1
         return
     }
-    let k=0
-    let sign="+"
- console.log(opr)
-    while(opr.includes("*")===true || opr.includes("/")===true){
 
-        for(let i=0;i<opr.length;i++){
-            if(opr[i]==="*"){
-             let k=parseInt(opr[i-1])*parseInt(opr[i+1])
-                opr[i-1]=k
-                opr=opr.slice(0,i).concat(opr.slice(i+2))
-                console.log(opr)
+    opr=opr.map(op=>sign.includes(op)?op:op=parseInt(op))
+  while (opr.indexOf('*')!==-1 || opr.indexOf('/')!=-1){
+        let op1=opr.indexOf('*')
+        op1===-1?-1:(opr=opr.slice(0,op1-1).concat([opr[op1-1]*opr[op1+1]].concat(opr.slice(op1+2))))
+
+        op1=opr.indexOf('/')
+      op1===-1?-1:(opr=opr.slice(0,op1-1).concat([(opr[op1-1]/opr[op1+1]).toFixed(0)].concat(opr.slice(op1+2))))
+  }
+    for(let i=0;i<opr.length;i++) {
+        if (opr[i] === '-') {
+            opr[i + 1] *= -1
         }
-            if(opr[i]==="/"){
-             let k=parseInt(opr[i-1])/parseInt(opr[i+1])
-                opr[i-1]=k
-                opr=opr.slice(0,i).concat(opr.slice(i+2))
-                console.log(opr)
+        if("+-".includes(opr[i])){
+            opr[i] = '#'
         }
+    }
+    opr=opr.map(e=>e=parseInt(e))
 
-        }}
-    while(opr.includes("+")===true || opr.includes("-")===true){
+    opr=opr.filter(op=>!isNaN(op))
+    console.log(opr)
+    for(let i=1;i<opr.length;i++){
+        opr[0]+=opr[i]
+    }
+    opr=[opr[0]]
 
-        for(let i=0;i<opr.length;i++){
-            if(opr[i]==="+"){
-                let k=parseInt(opr[i-1])+parseInt(opr[i+1])
-                opr[i-1]=k
-                opr=opr.slice(0,i).concat(opr.slice(i+2))
-                console.log(opr)
-            }
-            if(opr[i]==="-"){
-                let k=parseInt(opr[i-1])-parseInt(opr[i+1])
-                opr[i-1]=k
-                opr=opr.slice(0,i).concat(opr.slice(i+2))
-                console.log(opr)
-            }
 
-        }}
+
+
+
 
 
     screen.innerText=""
@@ -67,7 +61,6 @@ function calculate(s){
     screen.innerText=opr[0]
     nr=opr[0]
     opr.pop()
-
 
 
 
@@ -84,12 +77,13 @@ function keyHandlers(e){
     let screen=document.querySelector(".screen_display")
     let screen_2=document.querySelector(".current_string")
 
-    if(nr.length>7 || opr.length>7){
+    if(nr.length>7 || opr.length>12){
         screen.innerText=""
         screen_2.innerText="ERROR INPUT TOO BIG (PRESS DELETE TO CONTINUE)"
         error_flag=1
 
     }
+
 
 
     if(error_flag===0) {
